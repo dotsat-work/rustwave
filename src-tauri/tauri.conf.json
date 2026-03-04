@@ -10,9 +10,13 @@
     "withGlobalTauri": true,
     "windows": [
       {
-        "title": "rustwave",
-        "width": 800,
-        "height": 600
+        "label": "brainfm",
+        "title": "Rustwave",
+        "width": 1024,
+        "height": 768,
+        "transparent": true,
+        "decorations": true,
+        "url": "https://www.brain.fm/app"
       }
     ],
     "security": {
