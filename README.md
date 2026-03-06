@@ -4,7 +4,7 @@
   <img src="assets/rustwave.png" alt="Rustwave logo" width="480"/>
 </p>
 
-A lightweight Linux desktop wrapper for [Brain.fm](https://www.brain.fm/app), built with [Tauri 2](https://tauri.app()).
+A lightweight Linux desktop wrapper for [Brain.fm](https://www.brain.fm/app), built with [Tauri 2](https://tauri.app/).
 
 Brain.fm is a music app designed to improve focus, relaxation, and sleep. Rustwave gives it a native desktop experience on Linux — no browser tab needed. Your session is persisted across launches, so you log in once and stay logged in.
 
@@ -31,17 +31,33 @@ sudo apt install ./rustwave_0.1.0_amd64.deb
 sudo dnf install ./rustwave-0.1.0-1.x86_64.rpm
 ```
 
-### Arch / EndeavourOS / Manjaro (and any other distro)
+### Arch / EndeavourOS / Manjaro
 
-First install the required GStreamer dependencies:
+Install using the provided `pkg/` directory, which builds a native pacman package:
+
+**1. Install build dependencies (first time only):**
 ```bash
-sudo pacman -S gst-plugins-base gst-plugins-good gst-plugins-bad gst-libav
+sudo pacman -S webkit2gtk-4.1 gst-plugins-base gst-plugins-good gst-plugins-bad gst-libav
 ```
 
-Then run the binary directly:
+**2. Build and install the package:**
 ```bash
-chmod +x rustwave
-./rustwave
+cd pkg
+makepkg -sf
+sudo pacman -U rustwave-0.1.0-1-x86_64.pkg.tar.zst
+```
+
+This installs:
+- The binary to `/usr/bin/rustwave` (available system-wide on PATH)
+- The app icon to `/usr/share/icons/hicolor/256x256/apps/`
+- A `.desktop` file to `/usr/share/applications/` so Rustwave appears in your app launcher with the correct icon
+
+**To update after rebuilding:**
+```bash
+cargo tauri build
+cp src-tauri/target/release/rustwave pkg/
+cd pkg && makepkg -sf
+sudo pacman -U rustwave-0.1.0-1-x86_64.pkg.tar.zst
 ```
 
 ---
