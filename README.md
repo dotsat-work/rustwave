@@ -116,4 +116,4 @@ Please keep PRs focused and describe what problem they solve.
 
 ## License
 
-MIT
+This project is licensed under the [MIT License](LICENSE).
