@@ -1,6 +1,10 @@
 # Rustwave
 
-A lightweight Linux desktop wrapper for [Brain.fm](https://www.brain.fm/app), built with [Tauri 2](https://tauri.app/).
+<p align="center">
+  <img src="assets/rustwave.png" alt="Rustwave logo" width="480"/>
+</p>
+
+A lightweight Linux desktop wrapper for [Brain.fm](https://www.brain.fm/app), built with [Tauri 2](https://tauri.app()).
 
 Brain.fm is a music app designed to improve focus, relaxation, and sleep. Rustwave gives it a native desktop experience on Linux — no browser tab needed. Your session is persisted across launches, so you log in once and stay logged in.
 

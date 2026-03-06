@@ -1,0 +1,29 @@
+# Maintainer: Alex <alex@dotsat.work>
+pkgname=rustwave
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="A lightweight Linux desktop wrapper for Brain.fm"
+arch=('x86_64')
+url="https://github.com/AlexTLDR/rustwave"
+license=('MIT')
+depends=(
+  'webkit2gtk-4.1'
+  'gst-plugins-base'
+  'gst-plugins-good'
+  'gst-plugins-bad'
+  'gst-libav'
+)
+source=(
+  "rustwave"
+  "rustwave.png"
+  "rustwave.desktop"
+)
+noextract=("rustwave" "rustwave.png")
+sha256sums=('SKIP' 'SKIP' 'SKIP')
+
+package() {
+  install -Dm755 "${srcdir}/rustwave"         "${pkgdir}/usr/bin/rustwave"
+  install -Dm644 "${srcdir}/rustwave.png"     "${pkgdir}/usr/share/icons/hicolor/256x256/apps/rustwave.png"
+  install -Dm644 "${srcdir}/rustwave.desktop" "${pkgdir}/usr/share/applications/rustwave.desktop"
+}
+

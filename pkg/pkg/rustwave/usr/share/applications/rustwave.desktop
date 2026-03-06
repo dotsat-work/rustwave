@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Rustwave
+Comment=Brain.fm desktop client
+Exec=rustwave
+Icon=rustwave
+Type=Application
+Categories=AudioVideo;Audio;
+StartupNotify=true
+StartupWMClass=rustwave
+
