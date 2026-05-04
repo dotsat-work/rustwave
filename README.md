@@ -15,20 +15,32 @@ Brain.fm is a music app designed to improve focus, relaxation, and sleep. Rustwa
 - Native desktop window for Brain.fm on Linux
 - Persistent login session (no re-authentication on every launch)
 - Packages for Debian/Ubuntu (`.deb`) and Fedora/RHEL (`.rpm`) with GStreamer dependencies declared automatically
+- Portable `.AppImage` for any modern Linux distribution
 - Raw binary available for any Linux distribution
 
 ---
 
 ## Installation
 
+Prebuilt binaries for each release are available on the [GitHub Releases page](https://github.com/dotsat-work/rustwave/releases/latest).
+
 ### Debian / Ubuntu / Mint
 ```bash
+wget https://github.com/dotsat-work/rustwave/releases/download/v0.1.0/rustwave_0.1.0_amd64.deb
 sudo apt install ./rustwave_0.1.0_amd64.deb
 ```
 
 ### Fedora / RHEL / openSUSE
 ```bash
+wget https://github.com/dotsat-work/rustwave/releases/download/v0.1.0/rustwave-0.1.0-1.x86_64.rpm
 sudo dnf install ./rustwave-0.1.0-1.x86_64.rpm
+```
+
+### Other distributions (AppImage)
+```bash
+wget https://github.com/dotsat-work/rustwave/releases/download/v0.1.0/rustwave_0.1.0_amd64.AppImage
+chmod +x rustwave_0.1.0_amd64.AppImage
+./rustwave_0.1.0_amd64.AppImage
 ```
 
 ### Arch / EndeavourOS / Manjaro
